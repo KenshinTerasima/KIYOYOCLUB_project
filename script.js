@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-const targets = document.querySelectorAll('.fade, .fade_photo');
+const targets = document.querySelectorAll('.fade');
 for(let i = targets.length; i--;){
  let observer = new IntersectionObserver((entries, observer) => {
   for(let j = entries.length; j--;){
@@ -51,3 +51,4 @@ for(let i = targets.length; i--;){
  });
  observer.observe(targets[i]);
 }
+
