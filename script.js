@@ -19,6 +19,20 @@ nav.querySelectorAll("a").forEach((link) => {
     });
   });
 
+
+  $('a[href^="#"]').on('click', function() {
+    var speed = 1000;
+    var offset = 0; // スクロール位置をずらす（px）
+    var $this = $(this);
+    var href = $this.attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top - offset
+    $('body,html').animate({scrollTop:position}, speed, 'swing');
+    return false
+  });
+
+
+
 // mainのバンドロゴを下からズームインさせる
 document.addEventListener("DOMContentLoaded", function() {
     const logoImg = document.querySelector('.logo img');
