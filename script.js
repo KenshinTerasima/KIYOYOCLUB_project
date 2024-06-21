@@ -1,54 +1,56 @@
+// $(document).ready(function() {
 
-// ナビゲーション部分
-let nav = document.querySelector("#navArea");
-let btn = document.querySelector(".toggle-btn");
-let mask = document.querySelector("#mask");
+jQuery(function($){
+  // ナビゲーション部分
+  let $nav = $("#navArea");
+  let $btn = $(".toggle-btn");
+  let $mask = $("#mask");
 
-btn.onclick = () => {
-  nav.classList.toggle("open");
-};
-
-mask.onclick = () => {
-  nav.classList.toggle("open");
-};
-
-// ナビゲーションメニュー内のリンクがクリックされたときにナビゲーションメニューを閉じる
-nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("open");
-    });
+  $btn.on("click", function() {
+      $nav.toggleClass("open");
   });
 
-// mainのバンドロゴを下からズームインさせる
-document.addEventListener("DOMContentLoaded", function() {
-    const logoImg = document.querySelector('.logo img');
+  $mask.on("click", function() {
+      $nav.toggleClass("open");
+  });
 
-    // ロゴ画像にshowクラスを追加して表示する
-    logoImg.classList.add('show');
+  // ナビゲーションメニュー内のリンクがクリックされたときにナビゲーションメニューを閉じる
+  $nav.find("a").on("click", function() {
+      $nav.removeClass("open");
+  });
 
-    // ロゴ画像の表示アニメーションが完了した後に画像を表示する
-    logoImg.addEventListener('transitionend', function() {
-        setTimeout(() => {
-            document.querySelectorAll('.photos').forEach(img => {
-                img.style.opacity = 1;
-            });
-        }, 5000); // 5秒後に画像を表示
-    });
+  // スクロール処理
+  $('a[href^="#"]').on('click', function() {
+      var speed = 1000;
+      var offset = 0; // スクロール位置をずらす（px）
+      var href = $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top - offset;
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+  });
+
+  // mainのバンドロゴを下からズームインさせる
+  const $logoImg = $('.logo img');
+  $logoImg.addClass('show');
+
+  $logoImg.on('transitionend', function() {
+      setTimeout(function() {
+          $('.photos').css('opacity', '1');
+      }, 5000); // 5秒後に画像を表示
+  });
+
+  // 画像のフェードイン
+  $('.fade').each(function() {
+      let observer = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                  $(entry.target).addClass('active');
+              } else {
+                  $(entry.target).removeClass('active');
+              }
+          });
+      });
+      observer.observe(this);
+  });
 });
-
-
-
-const targets = document.querySelectorAll('.fade');
-for(let i = targets.length; i--;){
- let observer = new IntersectionObserver((entries, observer) => {
-  for(let j = entries.length; j--;){
-   if (entries[j].isIntersecting) {
-    entries[j].target.classList.add('active');
-   } else{
-    entries[j].target.classList.remove('active');
-   }
-  }
- });
- observer.observe(targets[i]);
-}
-
