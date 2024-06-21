@@ -6,8 +6,10 @@
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/kiyoyoclub_logo.jpg">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 
+    
     <title>喜洋洋club</title>
-
+    <meta name="google-site-verification" content="khSC9JJ8AAsOQNor3R6EYGe843wz6GxBaBdm1hObeJY" />
+    
     <?php wp_head(); ?>
 </head>
 

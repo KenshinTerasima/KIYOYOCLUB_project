@@ -6,7 +6,7 @@
     <section class="main_page" id="top">
 
         <div class="logo">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/kiyoyoclub_logo.jpg" alt="バンドロゴ">
+            <img src="<?php echo get_template_directory_uri() ;?>/images/kiyoyoclub_logo.jpg" alt="バンドロゴ">
         </div>
 
         <div class="photos">
@@ -18,7 +18,7 @@
         </div>
 
         <div class="band_instagram">
-            <a href="https://www.instagram.com/kiyoyoclub.official_/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/kiyoyoclub_instagram.jpg" alt="バンドインスタ" ></a>
+            <a href="https://www.instagram.com/kiyoyoclub.official_/" target="_blank"><img src="<?php echo get_template_directory_uri() ;?>/images/kiyoyoclub_instagram.jpg" alt="バンドインスタ" ></a>
         </div>
 
     </section>
