@@ -219,16 +219,8 @@ main {
                 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
                 font-size: 150px;
                 z-index: 999;
-                color: #000000;
-
-            }
-
-            .title2 {
-                margin-top: -190px;
-                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-                font-size: 150px;
                 color: #e93939;
-                margin-right: 30px;
+                text-shadow: 10px 10px 0 #000;
             }
         }
         
@@ -346,21 +338,15 @@ main {
         text-align: center;
 
         .title1{
-            padding-top: 50px;
+            padding-top: 90px;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             font-size: 150px;
             z-index: 999;
-            color: #000000;
-
-        }
-
-        .title2 {
-            margin-top: -190px;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            font-size: 150px;
             color: #e93939;
-            margin-right: 30px;
+            text-shadow: 10px 10px 0 #000;
         }
+
+
     }
 
     .history {

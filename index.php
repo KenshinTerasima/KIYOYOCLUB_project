@@ -28,7 +28,6 @@
 
         <div class="title"> 
             <div class="title1">MEMBER</div>
-            <div class="title2">MEMBER</div>
         </div>
 
         <div class="member_introduction">
@@ -79,7 +78,6 @@
 
         <div class="title">
             <div class="title1">NEWS</div>
-            <div class="title2">NEWS</div>
         </div>
 
         <div class="history">
